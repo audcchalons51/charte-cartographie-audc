@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Charte graphique cartographique · AUDC 51</title>
+<style>
+:root{--bg:#f6f8fa;--surf:#fff;--ink:#1d2b3a;--mute:#5c6670;--line:#d6dde4;--acc:#1f5c8b;--accsoft:#e6eff6}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#101820;--surf:#17222d;--ink:#e8eef3;--mute:#9aa7b3;--line:#2a3a48;--acc:#6fa8d6;--accsoft:#1c2f40}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 "Segoe UI",system-ui,-apple-system,sans-serif;display:grid;grid-template-columns:220px 1fr}
+nav{position:sticky;top:0;height:100vh;padding:28px 20px;border-right:1px solid var(--line);background:var(--surf)}
+nav b{display:block;font:700 15px/1.3 Georgia,"Times New Roman",serif;margin-bottom:18px}
+nav a{display:block;padding:6px 0;color:var(--mute);text-decoration:none;font-size:14px}
+nav a:hover,nav a:focus-visible{color:var(--acc);outline:none;text-decoration:underline}
+main{padding:40px clamp(20px,5vw,64px);max-width:980px}
+h1{font:700 34px/1.2 Georgia,"Times New Roman",serif;margin:0 0 8px}
+h2{font:700 24px/1.3 Georgia,"Times New Roman",serif;margin:56px 0 6px;padding-top:8px;border-top:2px solid var(--ink)}
+h3{font-size:15px;margin:24px 0 8px}
+p,li{max-width:70ch}
+.lead{color:var(--mute);font-size:18px}
+.note{background:var(--accsoft);border-left:4px solid var(--acc);padding:10px 14px;border-radius:4px;font-size:14px}
+.sw{display:flex;flex-wrap:wrap;gap:10px}
+.sw button{width:112px;border:1px solid var(--line);border-radius:6px;background:var(--surf);padding:0;cursor:pointer;color:var(--ink);text-align:left;font:inherit}
+.sw button:focus-visible{outline:3px solid var(--acc)}
+.sw i{display:block;height:56px;border-radius:5px 5px 0 0}
+.sw span{display:block;padding:4px 8px;font-size:12px;line-height:1.4}
+table{border-collapse:collapse;width:100%;font-size:14px;background:var(--surf)}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:var(--accsoft)}
+.wire{display:grid;grid-template-columns:1fr 150px;grid-template-rows:44px 260px 40px;gap:6px;max-width:560px;font-size:12px}
+.wire div{border:1.5px dashed var(--mute);border-radius:4px;display:flex;align-items:center;justify-content:center;text-align:center;padding:4px}
+.wire .map{background:var(--accsoft);grid-row:2}
+.wire .foot{grid-column:1/3}
+.wire .ttl{grid-column:1/3}
+.ex{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
+.ex a{display:block;padding:14px;background:var(--surf);border:1px solid var(--line);border-radius:6px;color:inherit;text-decoration:none}
+.ex a:hover,.ex a:focus-visible{border-color:var(--acc);outline:none}
+.ex small{color:var(--mute)}
+.chk label{display:block;padding:4px 0}
+#toast{position:fixed;bottom:20px;right:20px;background:var(--ink);color:var(--bg);padding:8px 14px;border-radius:6px;opacity:0;transition:opacity .2s}
+#toast.on{opacity:1}
+@media (max-width:760px){body{grid-template-columns:1fr}nav{position:static;height:auto;border-right:0;border-bottom:1px solid var(--line)}nav a{display:inline-block;margin-right:12px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<nav aria-label="Sections">
+<b>Charte cartographique<br>AUDC 51</b>
+<a href="#principes">Principes</a><a href="#couleurs">Couleurs</a><a href="#typo">Typographie</a>
+<a href="#elements">Éléments obligatoires</a><a href="#mise-en-page">Mise en page</a>
+<a href="#symbologie">Symbologie et classes</a><a href="#exemples">Cartes exemples</a><a href="#checklist">Avant publication</a><a href="#contribuer">Contribuer</a>
+</nav>
+<main>
+<h1>Charte graphique de la cartographie thématique</h1>
+<p class="lead">Une référence unique pour que toutes les cartes de l’agence se lisent comme un même ensemble.</p>
+<p class="note">Version de travail : les valeurs ci-dessous sont des propositions à valider par l’équipe et la direction. Modifiez-les directement dans ce fichier, puis faites une pull request.</p>
+
+<h2 id="principes">Principes</h2>
+<ul>
+<li>Une carte = un message. Le titre dit ce que la carte montre, pas seulement le thème.</li>
+<li>Peu de couleurs, bien contrastées, lisibles aussi en noir et blanc et par les daltoniens.</li>
+<li>Toujours les mêmes éléments, placés aux mêmes endroits.</li>
+<li>Chaque carte cite ses sources, sa date et son échelle de lecture.</li>
+</ul>
+
+<h2 id="couleurs">Couleurs</h2>
+<p>Cliquez sur une couleur pour copier son code hexadécimal.</p>
+<div id="palettes"></div>
+
+<h2 id="typo">Typographie</h2>
+<table>
+<tr><th>Usage</th><th>Police</th><th>Corps</th><th>Style</th></tr>
+<tr><td>Titre de la carte</td><td>Georgia (alternative : à définir)</td><td>20–24 pt</td><td>Gras, couleur encre</td></tr>
+<tr><td>Sous-titre</td><td>Segoe UI / Arial</td><td>12–14 pt</td><td>Normal, gris</td></tr>
+<tr><td>Légende, titres de classes</td><td>Segoe UI / Arial</td><td>9–10 pt</td><td>Normal</td></tr>
+<tr><td>Étiquettes communes</td><td>Segoe UI / Arial</td><td>7–9 pt</td><td>Halo blanc de 1 pt</td></tr>
+<tr><td>Sources et mentions</td><td>Segoe UI / Arial</td><td>7 pt</td><td>Normal, gris</td></tr>
+</table>
+
+<h2 id="elements">Éléments obligatoires</h2>
+<table>
+<tr><th>Élément</th><th>Règle</th></tr>
+<tr><td>Titre</td><td>Message principal, 2 lignes maximum, en haut à gauche.</td></tr>
+<tr><td>Légende</td><td>À droite, titre de l’indicateur et unité, classes du plus faible au plus fort.</td></tr>
+<tr><td>Échelle et flèche du nord</td><td>Échelle graphique en bas de la carte. Flèche du nord si la carte n’est pas orientée au nord.</td></tr>
+<tr><td>Sources</td><td>En pied de page : producteur, millésime, traitement AUDC 51.</td></tr>
+<tr><td>Logo et date</td><td>Logo de l’agence en bas à droite, date de production.</td></tr>
+<tr><td>Projection</td><td>RGF93 / Lambert-93 (EPSG:2154), à indiquer en pied de page.</td></tr>
+</table>
+
+<h2 id="mise-en-page">Mise en page</h2>
+<p>Formats courants : A4 et A3, portrait ou paysage. Marges de 10 mm, grille commune.</p>
+<div class="wire" role="img" aria-label="Schéma : titre en haut, carte à gauche, légende à droite, sources en bas">
+<div class="ttl">Titre et sous-titre</div><div class="map">Carte</div><div>Légende<br>Échelle, nord</div><div class="foot">Sources · projection · date · logo</div>
+</div>
+
+<h2 id="symbologie">Symbologie et classes</h2>
+<table>
+<tr><th>Cas</th><th>Règle proposée</th></tr>
+<tr><td>Taux, densités (choroplèthe)</td><td>4 à 6 classes, palette séquentielle, jamais de rouge/vert seuls.</td></tr>
+<tr><td>Valeurs avec point neutre</td><td>Palette divergente, point neutre explicite (moyenne, 0 ou référence).</td></tr>
+<tr><td>Catégories (occupation du sol, usages)</td><td>Palette qualitative, 8 catégories maximum.</td></tr>
+<tr><td>Effectifs (cercles proportionnels)</td><td>Surface proportionnelle à la valeur, 3 cercles de référence en légende.</td></tr>
+<tr><td>Méthode de discrétisation</td><td>Seuils naturels (Jenks) par défaut ; quantiles ou seuils manuels si justifiés dans la note de la carte.</td></tr>
+<tr><td>Limites administratives</td><td>Trait gris fin, du plus fin (commune) au plus épais (département).</td></tr>
+</table>
+
+<h2 id="exemples">Cartes exemples</h2>
+<p>Un lien par carte de référence. La liste se complète dans la variable <code>EXEMPLES</code> en bas de ce fichier.</p>
+<div class="ex" id="exemples-liste"></div>
+
+<h2 id="checklist">Avant publication</h2>
+<div class="chk">
+<label><input type="checkbox"> Le titre énonce le message de la carte</label>
+<label><input type="checkbox"> Les couleurs viennent de la palette de la charte</label>
+<label><input type="checkbox"> Légende complète avec unité</label>
+<label><input type="checkbox"> Échelle, sources, date et logo présents</label>
+<label><input type="checkbox"> Contraste vérifié (impression en niveaux de gris)</label>
+<label><input type="checkbox"> Relecture par un collègue</label>
+</div>
+
+<h2 id="contribuer">Contribuer</h2>
+<p>Proposez une modification par pull request : une couleur, une règle ou une carte exemple à ajouter. Les changements acceptés sont visibles dans l’historique Git, avec leur auteur et leur date.</p>
+</main>
+<div id="toast" role="status"></div>
+<script>
+var PALETTES=[
+{nom:"Identité et neutres",c:[["Encre","#1D2B3A"],["Bleu agence","#1F5C8B"],["Gris texte","#5C6670"],["Gris limites","#9AA3AB"],["Eau","#CFE3F0"],["Fond","#FFFFFF"]]},
+{nom:"Séquentielle (bleus)",c:[["Classe 1","#EAF1F7"],["Classe 2","#B5CDE2"],["Classe 3","#6F9DC4"],["Classe 4","#2F6FA3"],["Classe 5","#143F66"]]},
+{nom:"Divergente",c:[["Fort −","#B5534B"],["Faible −","#E3A59E"],["Neutre","#F2F0EB"],["Faible +","#9DBFD9"],["Fort +","#1F5C8B"]]},
+{nom:"Qualitative",c:[["Cat. 1","#1F5C8B"],["Cat. 2","#E0A030"],["Cat. 3","#4E9A74"],["Cat. 4","#B5534B"],["Cat. 5","#7A6AA8"],["Cat. 6","#8A8F94"]]}
+];
+var EXEMPLES=[
+{titre:"Carte exemple 1 : à remplacer",type:"Choroplèthe",url:"#"},
+{titre:"Carte exemple 2 : à remplacer",type:"Cercles proportionnels",url:"#"},
+{titre:"Carte exemple 3 : à remplacer",type:"Typologie",url:"#"}
+];
+var box=document.getElementById("palettes");
+PALETTES.forEach(function(p){
+ var h=document.createElement("h3");h.textContent=p.nom;box.appendChild(h);
+ var w=document.createElement("div");w.className="sw";
+ p.c.forEach(function(x){
+  var b=document.createElement("button");b.type="button";
+  b.innerHTML='<i style="background:'+x[1]+'"></i><span>'+x[0]+'<br>'+x[1]+'</span>';
+  b.onclick=function(){
+   var t=document.getElementById("toast");
+   if(navigator.clipboard){navigator.clipboard.writeText(x[1]).catch(function(){});}
+   t.textContent=x[1]+" copié";t.className="on";setTimeout(function(){t.className=""},1400);
+  };
+  w.appendChild(b);
+ });
+ box.appendChild(w);
+});
+var ex=document.getElementById("exemples-liste");
+EXEMPLES.forEach(function(e){
+ var a=document.createElement("a");a.href=e.url;a.target="_blank";a.rel="noopener";
+ a.innerHTML="<b>"+e.titre+"</b><br><small>"+e.type+"</small>";ex.appendChild(a);
+});
+</script>
+</body>
+</html>
