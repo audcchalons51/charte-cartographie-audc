@@ -5,190 +5,183 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Charte graphique cartographique · AUDC 51</title>
 <style>
-:root{--side:#343131;--sidetxt:#b3b3b3;--head:#2980b9;--link:#2980b9;--bg:#fcfcfc;--ink:#404040;--mute:#6b7178;--line:#e1e4e5;--soft:#eaf3fa;--warn:#fff4e0;--warnb:#e0a030}
+:root{--bg:#f6f8fa;--surf:#fff;--ink:#1d2b3a;--mute:#5c6670;--line:#d6dde4;--acc:#1f5c8b;--accsoft:#e6eff6}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#101820;--surf:#17222d;--ink:#e8eef3;--mute:#9aa7b3;--line:#2a3a48;--acc:#6fa8d6;--accsoft:#1c2f40}}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:#edf0f2;color:var(--ink);font:16px/1.65 "Segoe UI",Lato,Arial,sans-serif}
-nav{position:fixed;inset:0 auto 0 0;width:280px;background:var(--side);overflow-y:auto}
-.brand{background:var(--head);color:#fff;padding:18px 20px;font:700 17px/1.3 Georgia,"Roboto Slab",serif}
-.brand small{display:block;font:400 12px "Segoe UI",Arial,sans-serif;opacity:.85;margin-top:4px}
-nav a{display:block;padding:9px 20px;color:var(--sidetxt);text-decoration:none;font-size:14px;border-bottom:1px solid #3d3a3a}
-nav a:hover,nav a:focus-visible{background:#2b2828;color:#fff;outline:none}
-main{margin-left:280px;background:var(--bg);min-height:100vh;padding:36px clamp(20px,5vw,64px) 60px}
-.in{max-width:960px}
-h1,h2,h3{font-family:Georgia,"Roboto Slab",serif;color:#333}
-h1{font-size:32px;margin:0 0 6px}
-h2{font-size:24px;margin:52px 0 8px;padding-top:10px;border-top:1px solid var(--line)}
-h3{font-size:16px;margin:24px 0 8px}
-a{color:var(--link)}
-p,li{max-width:72ch}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 "Segoe UI",system-ui,-apple-system,sans-serif;display:grid;grid-template-columns:220px 1fr}
+nav{position:sticky;top:0;height:100vh;padding:28px 20px;border-right:1px solid var(--line);background:var(--surf)}
+nav b{display:block;font:700 15px/1.3 Georgia,"Times New Roman",serif;margin-bottom:18px}
+nav a{display:block;padding:6px 0;color:var(--mute);text-decoration:none;font-size:14px}
+nav a:hover,nav a:focus-visible{color:var(--acc);outline:none;text-decoration:underline}
+main{padding:40px clamp(20px,5vw,64px);max-width:980px}
+h1{font:700 34px/1.2 Georgia,"Times New Roman",serif;margin:0 0 8px}
+h2{font:700 24px/1.3 Georgia,"Times New Roman",serif;margin:56px 0 6px;padding-top:8px;border-top:2px solid var(--ink)}
+h3{font-size:15px;margin:24px 0 8px}
+p,li{max-width:70ch}
 .lead{color:var(--mute);font-size:18px}
-.note,.warn{padding:10px 14px;border-radius:3px;font-size:14px;margin:14px 0}
-.note{background:var(--soft);border-left:4px solid var(--head)}
-.warn{background:var(--warn);border-left:4px solid var(--warnb)}
+.note{background:var(--accsoft);border-left:4px solid var(--acc);padding:10px 14px;border-radius:4px;font-size:14px}
 .sw{display:flex;flex-wrap:wrap;gap:10px}
-.sw button{width:108px;border:1px solid var(--line);border-radius:4px;background:#fff;padding:0;cursor:pointer;color:var(--ink);text-align:left;font:inherit}
-.sw button:focus-visible{outline:3px solid var(--head)}
-.sw i{display:block;height:48px;border-radius:3px 3px 0 0}
+.sw button{width:112px;border:1px solid var(--line);border-radius:6px;background:var(--surf);padding:0;cursor:pointer;color:var(--ink);text-align:left;font:inherit}
+.sw button:focus-visible{outline:3px solid var(--acc)}
+.sw i{display:block;height:56px;border-radius:5px 5px 0 0}
 .sw span{display:block;padding:4px 8px;font-size:12px;line-height:1.4}
-table{border-collapse:collapse;width:100%;font-size:14px;background:#fff;margin:10px 0}
+table{border-collapse:collapse;width:100%;font-size:14px;background:var(--surf)}
 th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
-th{background:var(--soft)}
-.wires{display:flex;flex-wrap:wrap;gap:24px}
-.wire{display:grid;gap:6px;font-size:12px}
-.wire div{border:1.5px dashed var(--mute);border-radius:3px;display:flex;align-items:center;justify-content:center;text-align:center;padding:4px;background:#fff}
-.wire .m{background:var(--soft)}
-.wp{grid-template-columns:210px;grid-template-rows:230px 36px;width:210px}
-.wp .m{position:relative;align-items:flex-start;justify-content:flex-start;text-align:left;font-size:11px}
-.wl{grid-template-columns:330px;grid-template-rows:150px 46px;width:330px}
-.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:18px}
-.gal figure{margin:0;background:#fff;border:1px solid var(--line);border-radius:4px;overflow:hidden;display:flex;flex-direction:column}
-.gal img{width:100%;height:260px;object-fit:cover;object-position:top;display:block;background:#f1f1f1}
-.gal figcaption{padding:12px 14px;font-size:14px}
-.gal b{display:block;font-size:15px}
-.gal small{color:var(--mute);display:block;margin:2px 0 6px}
-.gal a.b{display:inline-block;margin:0 10px 0 0;font-size:13px}
+th{background:var(--accsoft)}
+.wire{display:grid;grid-template-columns:1fr 150px;grid-template-rows:44px 260px 40px;gap:6px;max-width:560px;font-size:12px}
+.wire div{border:1.5px dashed var(--mute);border-radius:4px;display:flex;align-items:center;justify-content:center;text-align:center;padding:4px}
+.wire .map{background:var(--accsoft);grid-row:2}
+.wire .foot{grid-column:1/3}
+.wire .ttl{grid-column:1/3}
+.ex{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
+.ex a{display:block;padding:14px;background:var(--surf);border:1px solid var(--line);border-radius:6px;color:inherit;text-decoration:none}
+.ex a:hover,.ex a:focus-visible{border-color:var(--acc);outline:none}
+.ex small{color:var(--mute)}
+.ex img{width:100%;height:auto;display:block;border:1px solid var(--line);border-radius:4px;margin-bottom:8px}
+.wire.v .map{grid-row:1}
 .chk label{display:block;padding:4px 0}
-#toast{position:fixed;bottom:20px;right:20px;background:#333;color:#fff;padding:8px 14px;border-radius:4px;opacity:0;transition:opacity .2s}
+#toast{position:fixed;bottom:20px;right:20px;background:var(--ink);color:var(--bg);padding:8px 14px;border-radius:6px;opacity:0;transition:opacity .2s}
 #toast.on{opacity:1}
-@media (max-width:860px){nav{position:static;width:auto}main{margin-left:0}nav a{display:inline-block;border:0;padding:6px 12px}}
+@media (max-width:760px){body{grid-template-columns:1fr}nav{position:static;height:auto;border-right:0;border-bottom:1px solid var(--line)}nav a{display:inline-block;margin-right:12px}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
 <nav aria-label="Sections">
-<div class="brand">Charte cartographique<small>AUDC 51 · Observatoire</small></div>
-<a href="#principes">Principes</a><a href="#constat">Ce que montrent les cartes actuelles</a><a href="#couleurs">Couleurs</a><a href="#typo">Typographie</a>
-<a href="#elements">Éléments obligatoires</a><a href="#mise-en-page">Gabarits de mise en page</a>
-<a href="#symbologie">Symbologie et classes</a><a href="#exemples">Cartes exemples</a><a href="#corrections">Points à corriger</a><a href="#checklist">Avant publication</a><a href="#contribuer">Contribuer</a>
-<a href="https://audcchalons51.github.io/methodes_travaux_audc51/">← Plateforme de documentation</a>
+<b>Charte cartographique<br>AUDC 51</b>
+<a href="#principes">Principes</a><a href="#couleurs">Couleurs</a><a href="#typo">Typographie</a>
+<a href="#elements">Éléments obligatoires</a><a href="#mise-en-page">Mise en page</a>
+<a href="#symbologie">Symbologie et classes</a><a href="#exemples">Cartes exemples</a><a href="#ressources">Ressources</a><a href="#trancher">À trancher</a><a href="#checklist">Avant publication</a><a href="#contribuer">Contribuer</a>
 </nav>
-<main><div class="in">
+<main>
 <h1>Charte graphique de la cartographie thématique</h1>
-<p class="lead">Une référence unique pour que toutes les cartes de l’agence, sur papier comme sur Lizmap, se lisent comme un même ensemble.</p>
-<p class="note">Version de travail : cette version part des 8 cartes réellement produites par l’agence (E1, M2, M5, M8, P5). Les règles qui décrivent déjà la pratique sont à confirmer ; celles qui la modifient sont signalées. À valider par l’équipe et la direction, puis à modifier directement dans ce fichier par pull request.</p>
+<p class="lead">À garder ouvert pendant que vous fabriquez une carte : couleurs à copier, règles de mise en page, ressources à télécharger et liste de contrôle avant diffusion.</p>
+<p class="note">Version de travail : les couleurs et les règles viennent des huit cartes actuelles de l’agence (codes relevés sur les pastilles des légendes). Elles sont à valider par l’équipe et la direction, puis à comparer avec vos styles QGIS.</p>
 
 <h2 id="principes">Principes</h2>
 <ul>
-<li><b>Une carte = un message.</b> Le titre dit ce que la carte montre (« L’emploi se concentre autour de Châlons »), le sous-titre donne l’indicateur et l’année.</li>
-<li><b>Peu de couleurs, bien contrastées</b>, lisibles en noir et blanc et par les daltoniens.</li>
-<li><b>Toujours les mêmes éléments</b>, placés aux mêmes endroits d’une carte à l’autre.</li>
-<li><b>Chaque carte cite ses sources</b>, sa date de réalisation, son échelle et sa projection.</li>
+<li>Une carte = un message. Le titre dit ce que la carte montre, pas seulement le thème.</li>
+<li>Peu de couleurs, bien contrastées, lisibles aussi en noir et blanc et par les daltoniens.</li>
+<li>Toujours les mêmes éléments, placés aux mêmes endroits.</li>
+<li>Chaque carte cite ses sources, sa date et son échelle de lecture.</li>
 </ul>
 
-<h2 id="constat">Ce que montrent les cartes actuelles</h2>
-<p>La mise en page est déjà très homogène. La charte doit d’abord <b>écrire ce qui existe</b> :</p>
-<table>
-<tr><th>Élément</th><th>Pratique constatée</th><th>Ancienne règle de la charte</th></tr>
-<tr><td>Titre</td><td>Arial gras, en haut à gauche, thème + année (« Indice de vieillissement en 2022 »)</td><td>Georgia gras, message principal</td></tr>
-<tr><td>Légende</td><td>En haut à gauche, sous le titre, sur la carte</td><td>À droite</td></tr>
-<tr><td>Échelle, nord, logos</td><td>Bas de la carte : logos Pays de Châlons et AUD.C à gauche, échelle graphique et nord au centre</td><td>Logo en bas à droite</td></tr>
-<tr><td>Sources</td><td>Texte vertical à gauche (portrait) ou en bas à droite (paysage) ; « Réalisation : Observatoire-AUDC, mois année »</td><td>En pied de page</td></tr>
-<tr><td>Limites</td><td>Communes en gris fin, EPCI en trait gris-bleu plus épais</td><td>Idem</td></tr>
-<tr><td>Projection</td><td><b>Jamais indiquée</b></td><td>Obligatoire (EPSG:2154)</td></tr>
-</table>
-<p class="note">Proposition : aligner la charte sur la pratique (légende en haut à gauche, logos en bas à gauche, Arial partout) plutôt que de refaire toutes les cartes. Reste à ajouter la projection dans les sources.</p>
-
 <h2 id="couleurs">Couleurs</h2>
-<p>Cliquez sur une couleur pour copier son code hexadécimal. Les palettes séquentielles et divergente sont celles déjà utilisées dans les cartes (codes relevés dans les légendes).</p>
+<p>Cliquez sur une couleur pour copier son code hexadécimal. Les codes sont ceux des cartes de référence ; les palettes séquentielles vont du plus faible au plus fort.</p>
 <div id="palettes"></div>
-<p class="warn">Les couleurs du site (bleu <code>#2980B9</code>, anthracite <code>#343131</code>) reprennent le thème de la plateforme de documentation. À confirmer si l’agence souhaite un bleu propre, par exemple tiré de son logo.</p>
 
 <h2 id="typo">Typographie</h2>
+<p>Relevé sur les cartes actuelles : une seule famille sans empattement, de type Arial, sans police décorative.</p>
 <table>
-<tr><th>Usage</th><th>Police</th><th>Corps</th><th>Style</th></tr>
-<tr><td>Titre de la carte</td><td>Arial</td><td>20–24 pt</td><td>Gras, noir</td></tr>
-<tr><td>Sous-titre</td><td>Arial</td><td>12–14 pt</td><td>Normal, gris</td></tr>
-<tr><td>Légende, titres de classes</td><td>Arial</td><td>9–10 pt</td><td>Normal ; titre de légende en gras</td></tr>
-<tr><td>Étiquettes communes</td><td>Arial</td><td>7–9 pt</td><td>Halo blanc de 1 pt</td></tr>
-<tr><td>Sources et mentions</td><td>Arial</td><td>7 pt</td><td>Normal, gris</td></tr>
+<tr><th>Usage</th><th>Style observé</th></tr>
+<tr><td>Titre de la carte</td><td>Gras, noir, en haut à gauche, à peine plus grand que le texte de légende.</td></tr>
+<tr><td>Entrées de légende</td><td>Normal, noir.</td></tr>
+<tr><td>Noms de communes</td><td>Normal, noir. Valeurs en gras sur les plus gros cercles.</td></tr>
+<tr><td>Sources et réalisation</td><td>Normal, petit corps. À la verticale sur le bord gauche (portrait) ou en bas à droite (paysage).</td></tr>
 </table>
-<p>Une seule famille de caractères pour toutes les cartes. Georgia reste réservée à ce site, pas aux cartes.</p>
+<p class="note">Les corps en points sont à relever dans vos modèles QGIS, puis à noter ici.</p>
 
 <h2 id="elements">Éléments obligatoires</h2>
+<p>Présents sur les huit cartes de référence.</p>
 <table>
-<tr><th>Élément</th><th>Règle</th></tr>
-<tr><td>Titre</td><td>En haut à gauche, 2 lignes maximum. Il énonce le message, l’indicateur et l’année figurent dans le sous-titre ou la légende.</td></tr>
-<tr><td>Légende</td><td>Sous le titre. Titre de l’indicateur, unité, classes du plus faible au plus fort. Libellés relus et sans faute.</td></tr>
-<tr><td>Échelle et flèche du nord</td><td>Échelle graphique et flèche du nord en bas de la carte.</td></tr>
-<tr><td>Sources</td><td>Producteur, millésime, traitement : « Sources : INSEE, 2022, IGN BD Topo® 2025 · Réalisation : Observatoire-AUDC, mois année ».</td></tr>
-<tr><td>Logos</td><td>Pays de Châlons-en-Champagne et AUD.C, en bas à gauche.</td></tr>
-<tr><td>Projection</td><td>« RGF93 / Lambert-93 (EPSG:2154) » à ajouter à la ligne de sources.</td></tr>
-<tr><td>Symbole de référence</td><td>Cercles ou camemberts proportionnels : 3 valeurs de référence en légende, plus l’encart du plus grand symbole s’il dépasse de la carte, avec sa valeur.</td></tr>
+<tr><th>Élément</th><th>Règle observée</th></tr>
+<tr><td>Titre</td><td>Gras, en tête de légende, en haut à gauche. Il nomme l’indicateur et l’année.</td></tr>
+<tr><td>Légende</td><td>Symbole + libellé. Elle se termine par « Limites communes » et « Limites EPCI » sur les cartes à l’échelle des communes.</td></tr>
+<tr><td>Sources et réalisation</td><td>Deux lignes : « Sources : producteur, année, IGN BD Topo®2025 » puis « Réalisation : Observatoire-AUDC, mois année ».</td></tr>
+<tr><td>Logos</td><td>Pays de Châlons en Champagne et AUD.C, en bas à gauche.</td></tr>
+<tr><td>Échelle</td><td>Barre noir et blanc à trois graduations : 0 – 5 – 10 km en portrait, 0 – 10 – 20 km ou 0 – 15 – 30 km en paysage.</td></tr>
+<tr><td>Flèche du nord</td><td>Près de l’échelle en portrait, en haut à droite en paysage.</td></tr>
 </table>
 
-<h2 id="mise-en-page">Gabarits de mise en page</h2>
-<p>Deux gabarits couvrent les cartes de l’agence. Formats A4 ou A3, marges de 10 mm.</p>
-<div class="wires">
-<div><h3>Portrait : le Pays à l’échelle communale</h3>
-<div class="wire wp" role="img" aria-label="Portrait : titre et légende en haut à gauche, carte, logos, échelle et nord en bas"><div class="m">Titre<br>Légende<br>(haut gauche)<br><br>Carte du Pays</div><div>Logos · échelle · nord · sources</div></div></div>
-<div><h3>Paysage : contexte régional, flux</h3>
-<div class="wire wl" role="img" aria-label="Paysage : carte pleine largeur avec bandeau en bas pour logos, légende, échelle et sources"><div class="m">Carte (fond ombré, nord en haut à droite)</div><div>Bandeau : logos · légende · échelle · sources</div></div></div>
+<h2 id="mise-en-page">Mise en page</h2>
+<p>Deux gabarits A4, selon l’échelle de lecture. Les cartes actuelles sont exportées en 1 653 × 2 338 px (200 dpi).</p>
+<h3>Portrait : territoire à l’échelle des communes</h3>
+<div class="wire v" style="grid-template-columns:36px 1fr;grid-template-rows:280px 44px;max-width:420px" role="img" aria-label="Schéma portrait : sources à la verticale à gauche, carte avec légende en haut à gauche, logos, nord et échelle en bas">
+<div style="writing-mode:vertical-rl">Sources</div><div class="map">Carte<br>titre et légende en haut à gauche</div><div class="foot">Logos · flèche du nord · échelle</div>
+</div>
+<h3>Paysage : contexte élargi (flux, gares)</h3>
+<div class="wire" style="grid-template-columns:1fr 1fr 1fr;grid-template-rows:180px 56px;max-width:560px" role="img" aria-label="Schéma paysage : carte sur fond de relief, bandeau en bas avec logos, légende, échelle et sources">
+<div class="map" style="grid-column:1/4;grid-row:1">Carte sur fond de relief<br>flèche du nord en haut à droite</div><div>Logos</div><div>Titre et légende</div><div>Échelle et sources</div>
 </div>
 
 <h2 id="symbologie">Symbologie et classes</h2>
 <table>
-<tr><th>Cas</th><th>Règle</th><th>Exemple dans les cartes</th></tr>
-<tr><td>Taux, indices (choroplèthe)</td><td>4 à 6 classes, palette séquentielle, jamais de rouge/vert seuls.</td><td>Concentration de l’emploi (6 classes, verts) ; vieillissement (5 classes, bleu-vert)</td></tr>
-<tr><td>Valeurs avec point neutre</td><td>Palette divergente avec classe neutre grise explicite (0, moyenne ou référence).</td><td>Évolution de l’emploi (classe « = à 0 % » en gris)</td></tr>
-<tr><td>Catégories</td><td>Palette qualitative, 8 catégories maximum, distinguables en niveaux de gris.</td><td>Secteurs d’activité (5 catégories)</td></tr>
-<tr><td>Effectifs</td><td>Cercles proportionnels à la surface, 3 cercles de référence en légende.</td><td>Établissements, voyageurs en gare, population de 60 ans et plus</td></tr>
-<tr><td>Structure d’une valeur</td><td>Camemberts proportionnels, 2 à 5 parts, étiquetés pour les plus grands symboles.</td><td>Emplois précaires / non précaires</td></tr>
-<tr><td>Flux</td><td>Flèches entrantes en rouge, sortantes en bleu, interne en orange, épaisseur proportionnelle, valeur sur la flèche.</td><td>Flux domicile-travail</td></tr>
-<tr><td>Discrétisation</td><td>Seuils naturels (Jenks) par défaut ; seuils manuels si lisibles (20, 40, 60…) et justifiés dans la note.</td><td>Concentration de l’emploi (seuils ronds)</td></tr>
-<tr><td>Limites</td><td>Communes en gris fin, EPCI plus épais, du plus fin au plus épais.</td><td>Toutes les cartes</td></tr>
+<tr><th>Cas</th><th>Pratique observée</th><th>Cartes</th></tr>
+<tr><td>Indice ou taux par commune</td><td>5 ou 6 classes, du clair au foncé. Libellés : « &lt; à 20 », « [ 20 à 40 [ », « &gt;= à 100 ».</td><td>E1 concentration, P5</td></tr>
+<tr><td>Évolution</td><td>6 classes : tons sable pour le négatif, gris pour « = à 0 % », tons turquoise pour le positif.</td><td>E1 évolution</td></tr>
+<tr><td>Effectifs, nombres</td><td>Cercles proportionnels. La légende donne 3 cercles de référence (maximum, intermédiaire, minimum) reliés par des pointillés. Valeur en gras sur les plus gros cercles.</td><td>E1 établissements, P5, M2</td></tr>
+<tr><td>Structure (parts)</td><td>Camemberts de taille proportionnelle, une couleur fixe par catégorie.</td><td>E1 effectifs, E1 évolution</td></tr>
+<tr><td>Encart</td><td>Cercle ou camembert agrandi en bas à droite, relié à la carte par un pointillé.</td><td>E1, P5</td></tr>
+<tr><td>Flux</td><td>Flèches courbes d’épaisseur proportionnelle : rouge entrants, bleu sortants, orange interne.</td><td>M5</td></tr>
+<tr><td>Réseaux</td><td>Lignes colorées par type, légende en tête de carte.</td><td>M8, M2</td></tr>
+<tr><td>Fond</td><td>Communes en fond très clair, limites communes grises fines, limites EPCI en trait gris plus marqué. Relief ombré pour les cartes de contexte.</td><td>toutes</td></tr>
 </table>
 
 <h2 id="exemples">Cartes exemples</h2>
-<p>Cliquez sur une image pour l’ouvrir en grand. La liste se complète dans la variable <code>EXEMPLES</code> en bas de ce fichier ; renseigner <code>lien</code> pour afficher le bouton vers l’album ou la carte Lizmap.</p>
-<div class="gal" id="galerie"></div>
+<p>Les cartes actuelles de l’agence, prises comme référence. Cliquez sur une miniature pour ouvrir la carte en pleine taille. La liste se complète dans la variable <code>EXEMPLES</code> en bas de ce fichier.</p>
+<p class="note">Les préfixes M, E et P des noms de fichiers (M5_, E1_, P5_) semblent désigner des thèmes : à confirmer et à documenter ici.</p>
+<div class="ex" id="exemples-liste"></div>
 
-<h2 id="corrections">Points à corriger sur les cartes existantes</h2>
-<p>Relevés en comparant les cartes à la charte. Aucun n’est bloquant, mais ils sont faciles à corriger avant la prochaine diffusion.</p>
+<h2 id="ressources">Ressources à télécharger</h2>
+<p>Déposez les fichiers dans le dossier <code>ressources/</code> du dépôt, puis ajoutez le lien ici.</p>
+<table>
+<tr><th>Ressource</th><th>Usage</th><th>Fichier</th></tr>
+<tr><td>Palettes de styles QGIS</td><td>Appliquer les couleurs de la charte à une couche</td><td>à ajouter (.xml ou .qml)</td></tr>
+<tr><td>Modèles de mise en page</td><td>Titre, légende, échelle et sources déjà placés</td><td>à ajouter (.qpt)</td></tr>
+<tr><td>Logo de l’agence</td><td>Pied de carte</td><td>à ajouter (.svg, .png)</td></tr>
+<tr><td>Fonds de carte et limites</td><td>Communes, EPCI, département</td><td>à ajouter</td></tr>
+</table>
+
+<h2 id="trancher">Points à trancher en équipe</h2>
+<p>Écarts relevés entre les huit cartes de référence.</p>
 <ul>
-<li><b>Projection absente</b> de toutes les cartes.</li>
-<li><b>Aménagements cyclables (M8)</b> : fautes dans la légende (« hosr voie verte », « piéton vélon »), libellés « aucun » et « autres » peu parlants, légende très longue avec des couleurs proches (rouge, orange, jaune-vert).</li>
-<li><b>Secteurs d’activité (E1)</b> : rouge et vert dans la même légende, ce que la charte déconseille. Les petites communes sont presque illisibles.</li>
-<li><b>Vieillissement (P5)</b> : cercles bleus sur fond bleu, contraste faible dans les classes les plus foncées.</li>
-<li><b>Encart du plus grand symbole</b> (cartes P5 et E1) : grand cercle ou camembert en bas à droite sans valeur ni libellé.</li>
-<li><b>Dates</b> : « avril 2026 » sur P5, « juillet 2026 » sur les autres, à harmoniser.</li>
-<li><b>Titres</b> : thématiques (« Indice de concentration de l’emploi »), pas encore des messages.</li>
+<li><b>Typographie française</b> : les cartes portent « Sources: » alors que la règle demande une espace avant les deux-points.</li>
+<li><b>Libellés de classes</b> : « [ 20 à 40 [ » (avec espaces), « [0,50 à 1[ » (sans espaces) et « ]0 à 3 %[ » coexistent. Choisir un seul format.</li>
+<li><b>Date de réalisation</b> : « juillet 2026 » sur sept cartes, « avril 2026 » sur P5. Date de la carte ou date de la donnée ?</li>
+<li><b>Légende M8</b> : « hosr » à corriger en « hors », « Pedestre » en « Pédestre », et classement alphabétique à remplacer par un ordre logique.</li>
+<li><b>Rouge</b> : trois rouges différents pour trois sens (« aucun » en M8, « entrants » en M5, « agriculture » en E1).</li>
+<li><b>Cercles proportionnels</b> : trois bleus différents (établissements, 60 ans et plus, gares). Choisir un bleu unique.</li>
+<li><b>Fond des communes</b> : crème (#FFFBF5) ou gris clair (#F4F4F4) selon les cartes.</li>
+<li><b>Encarts</b> : sur E1 établissements et P5, le grand cercle n’a ni titre ni valeur.</li>
 </ul>
 
 <h2 id="checklist">Avant publication</h2>
 <div class="chk">
 <label><input type="checkbox"> Le titre énonce le message de la carte</label>
 <label><input type="checkbox"> Les couleurs viennent de la palette de la charte</label>
-<label><input type="checkbox"> Légende complète avec unité, sans faute</label>
-<label><input type="checkbox"> Échelle, nord, sources, projection, date et logos présents</label>
-<label><input type="checkbox"> Symboles de référence et encart du plus grand symbole renseignés</label>
+<label><input type="checkbox"> Légende complète avec unité</label>
+<label><input type="checkbox"> Échelle, sources, date et logo présents</label>
 <label><input type="checkbox"> Contraste vérifié (impression en niveaux de gris)</label>
 <label><input type="checkbox"> Relecture par un collègue</label>
 </div>
 
 <h2 id="contribuer">Contribuer</h2>
-<p>Proposez une modification par pull request : une couleur, une règle ou une carte exemple à ajouter. Les images se déposent dans le dossier <code>cartes/</code>. Les changements acceptés sont visibles dans l’historique Git, avec leur auteur et leur date.</p>
-</div></main>
+<p>Proposez une modification par pull request : une couleur, une règle ou une carte exemple à ajouter. Les changements acceptés sont visibles dans l’historique Git, avec leur auteur et leur date.</p>
+</main>
 <div id="toast" role="status"></div>
 <script>
 var PALETTES=[
-{nom:"Identité et neutres",c:[["Anthracite","#343131"],["Bleu agence","#2980B9"],["Gris texte","#5C6670"],["Gris limites","#9AA3AB"],["Eau","#CFE3F0"],["Fond","#FFFFFF"]]},
-{nom:"Séquentielle verte (concentration de l’emploi)",c:[["< 20","#FFFFD9"],["20–40","#DAF0BA"],["40–60","#B0DEA4"],["60–80","#85CA8F"],["80–100","#5DB17A"],["≥ 100","#408E69"]]},
-{nom:"Séquentielle bleu-vert (vieillissement)",c:[["< 0,50","#F0F9E8"],["0,50–1","#BAE4BC"],["1–1,50","#7BCCC4"],["1,50–2","#43A2CA"],["≥ 2","#0868AC"]]},
-{nom:"Divergente (évolution de l’emploi)",c:[["< -3 %","#E7C69E"],["-3 à 0 %","#E7D19E"],["= 0 %","#E6E6E6"],["0 à 3 %","#A0DAD1"],["3 à 6 %","#79CDBF"],["≥ 6 %","#64AA9E"]]},
-{nom:"Qualitative (proposition, remplace rouge/vert)",c:[["Cat. 1","#2980B9"],["Cat. 2","#E0A030"],["Cat. 3","#4E9A74"],["Cat. 4","#B5534B"],["Cat. 5","#7A6AA8"],["Cat. 6","#8A8F94"]]}
+{nom:"Identité (logos)",c:[["Magenta AUD.C","#CB00DB"],["Ocre AUD.C","#D28B2C"],["Noir texte","#000000"]]},
+{nom:"Séquentielle verte : concentration de l’emploi",c:[["< 20","#FFFFD9"],["20–40","#DAF0BA"],["40–60","#B0DEA4"],["60–80","#85CA8F"],["80–100","#5DB17A"],["≥ 100","#408E69"]]},
+{nom:"Séquentielle bleu-vert : vieillissement",c:[["< 0,50","#F0F9E8"],["0,50–1","#BAE4BC"],["1–1,50","#7BCCC4"],["1,50–2","#43A2CA"],["≥ 2","#0868AC"]]},
+{nom:"Divergente : évolution de l’emploi",c:[["< −3 %","#E7C69E"],["−3 à 0 %","#E7D19E"],["= 0 %","#E6E6E6"],["0 à 3 %","#A0DAD1"],["3 à 6 %","#79CDBF"],["≥ 6 %","#64AA9E"]]},
+{nom:"Catégories : secteurs d’activité",c:[["Agriculture","#FF1A1A"],["Industrie","#39A460"],["Construction","#FFB188"],["Commerces, services","#19B4C5"],["Admin., santé","#FFDC2C"]]},
+{nom:"Emploi précaire ou non",c:[["Non précaires","#49997D"],["Précaires","#E4A52F"]]},
+{nom:"Flux domicile-travail",c:[["Entrants","#E94A4C"],["Sortants","#58ABFF"],["Interne","#FC9B00"]]},
+{nom:"Aménagements cyclables",c:[["Mixte piéton-vélo","#1FBBD7"],["Aucun","#D0000A"],["Autres","#1F78B4"],["Bande cyclable","#B1BC01"],["Chaussée banalisée","#96693C"],["Goulotte","#000000"],["Piste cyclable","#FFBB01"],["Voie verte","#008412"]]},
+{nom:"Cercles proportionnels et fonds",c:[["Cercles établissements","#98CCE2"],["Cercles 60 ans et +","#528CDF"],["Cercles gares","#277CB5"],["Communes crème","#FFFBF5"],["Communes gris","#F4F4F4"],["Relief fond","#E7DEDC"]]}
 ];
 var EXEMPLES=[
-{titre:"Indice de concentration de l’emploi",type:"Choroplèthe séquentielle",img:"cartes/concentration-emploi.jpg",note:"6 classes aux seuils ronds, palette verte.",lien:""},
-{titre:"Indice de vieillissement en 2022",type:"Choroplèthe + cercles proportionnels",img:"cartes/indice-vieillissement.jpg",note:"Indice en aplat, population de 60 ans et plus en cercles.",lien:""},
-{titre:"Taux d’évolution annuel de l’emploi 2016-2022",type:"Divergente + camemberts",img:"cartes/evolution-emploi.jpg",note:"Classe neutre grise, part d’emplois précaires en camembert.",lien:""},
-{titre:"Établissements employeurs du secteur privé en 2024",type:"Cercles proportionnels",img:"cartes/etablissements-prives.jpg",note:"Fond neutre, une seule couleur de symbole.",lien:""},
-{titre:"Part des effectifs salariés par secteur en 2024",type:"Camemberts proportionnels",img:"cartes/effectifs-salaries.jpg",note:"Cinq secteurs, voir le point sur rouge/vert.",lien:""},
-{titre:"Flux de mobilités professionnelles",type:"Flux, format paysage",img:"cartes/flux-domicile-travail.jpg",note:"Entrants, sortants et flux interne, fond ombré.",lien:""},
-{titre:"Fréquentation des gares en 2024",type:"Cercles + réseau, format paysage",img:"cartes/frequentation-gares.jpg",note:"Encart de situation régionale, lignes SNCF.",lien:""},
-{titre:"Aménagements cyclables",type:"Réseau linéaire",img:"cartes/amenagements-cyclables.jpg",note:"Carte à simplifier : légende longue.",lien:""}
+{n:"m5-flux-domicile-travail",titre:"M5 · Flux de mobilités professionnelles",type:"Flux · paysage · INSEE 2022"},
+{n:"m8-amenagements-cyclables",titre:"M8 · Aménagements cyclables (PETR)",type:"Réseaux · portrait · Géovélo 2024"},
+{n:"e1-indice-concentration-emploi",titre:"E1 · Indice de concentration de l’emploi",type:"Choroplèthe · portrait · INSEE 2022"},
+{n:"e1-effectifs-salaries-2024",titre:"E1 · Effectifs salariés par secteur",type:"Camemberts proportionnels · portrait · INSEE 2024"},
+{n:"e1-etablissements-prives-2024",titre:"E1 · Établissements employeurs privés",type:"Cercles proportionnels · portrait · URSSAF 2024"},
+{n:"e1-evolution-emploi-2016-2022",titre:"E1 · Évolution annuelle de l’emploi",type:"Choroplèthe divergente et camemberts · portrait · INSEE 2022"},
+{n:"p5-indice-vieillissement",titre:"P5 · Indice de vieillissement",type:"Choroplèthe et cercles · portrait · INSEE 2022"},
+{n:"m2-frequentation-gares",titre:"M2 · Fréquentation des gares",type:"Cercles et réseau · paysage · SNCF 2024"}
 ];
-function toast(t){var e=document.getElementById("toast");e.textContent=t;e.className="on";setTimeout(function(){e.className=""},1400)}
 var box=document.getElementById("palettes");
 PALETTES.forEach(function(p){
  var h=document.createElement("h3");h.textContent=p.nom;box.appendChild(h);
@@ -196,16 +189,19 @@ PALETTES.forEach(function(p){
  p.c.forEach(function(x){
   var b=document.createElement("button");b.type="button";
   b.innerHTML='<i style="background:'+x[1]+'"></i><span>'+x[0]+'<br>'+x[1]+'</span>';
-  b.onclick=function(){if(navigator.clipboard){navigator.clipboard.writeText(x[1]).catch(function(){})}toast(x[1]+" copié")};
+  b.onclick=function(){
+   var t=document.getElementById("toast");
+   if(navigator.clipboard){navigator.clipboard.writeText(x[1]).catch(function(){});}
+   t.textContent=x[1]+" copié";t.className="on";setTimeout(function(){t.className=""},1400);
+  };
   w.appendChild(b);
  });
  box.appendChild(w);
 });
-var g=document.getElementById("galerie");
+var ex=document.getElementById("exemples-liste");
 EXEMPLES.forEach(function(e){
- var f=document.createElement("figure");
- f.innerHTML='<a href="'+e.img+'" target="_blank" rel="noopener"><img loading="lazy" src="'+e.img+'" alt="Carte : '+e.titre+'"></a><figcaption><b>'+e.titre+'</b><small>'+e.type+'</small>'+e.note+(e.lien?'<br><a class="b" href="'+e.lien+'" target="_blank" rel="noopener">Ouvrir la carte ↗</a>':'')+'</figcaption>';
- g.appendChild(f);
+ var a=document.createElement("a");a.href="cartes/"+e.n+".png";a.target="_blank";a.rel="noopener";
+ a.innerHTML='<img loading="lazy" src="cartes/miniatures/'+e.n+'.jpg" alt="Miniature de la carte : '+e.titre+'"><b>'+e.titre+'</b><br><small>'+e.type+'</small>';ex.appendChild(a);
 });
 </script>
 </body>
